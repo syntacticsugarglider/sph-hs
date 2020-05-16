@@ -1,0 +1,31 @@
+name:                sph-hs
+version:             1.0.0
+github:              "syntacticsugarglider/sph-hs"
+license:             BSD3
+author:              "Izzy Swart"
+maintainer:          "zenerboson@gmail.com"
+copyright:           "2020 Izzy Swart"
+
+dependencies:
+- base >= 4.7 && < 5
+- random
+- linear
+- GLUT
+- deepseq
+- parallel
+
+library:
+  source-dirs: src
+
+executables:
+  sph:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -Wall
+    - -O2
+    - -threaded
+    - -rtsopts
+    - -eventlog
+    dependencies:
+    - sph-hs

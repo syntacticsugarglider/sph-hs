@@ -1,0 +1,56 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: cc2b757e44814b2f07a9c37db321c7210a9b5c3cb4be4edbf048066a2b7c74d7
+
+name:           sph-hs
+version:        1.0.0
+homepage:       https://github.com/syntacticsugarglider/sph-hs#readme
+bug-reports:    https://github.com/syntacticsugarglider/sph-hs/issues
+author:         Izzy Swart
+maintainer:     zenerboson@gmail.com
+copyright:      2020 Izzy Swart
+license:        BSD3
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/syntacticsugarglider/sph-hs
+
+library
+  exposed-modules:
+      Display
+      Lib
+      Solver
+  other-modules:
+      Paths_sph_hs
+  hs-source-dirs:
+      src
+  build-depends:
+      GLUT
+    , base >=4.7 && <5
+    , deepseq
+    , linear
+    , parallel
+    , random
+  default-language: Haskell2010
+
+executable sph
+  main-is: Main.hs
+  other-modules:
+      Paths_sph_hs
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -O2 -threaded -rtsopts -eventlog
+  build-depends:
+      GLUT
+    , base >=4.7 && <5
+    , deepseq
+    , linear
+    , parallel
+    , random
+    , sph-hs
+  default-language: Haskell2010
